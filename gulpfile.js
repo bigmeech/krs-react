@@ -1,15 +1,16 @@
-'use strict'
+'use strict';
+
 const gulp = require('gulp');
 const connect = require('gulp-connect'); // runs local webserver
 const open = require('gulp-open'); // open url in web browser
 
 const config = {
   paths:{
-    html: './src/**/*.html',
+    html: './src/*.html',
     dist: './dist'
   },
   port: 9900,
-  devbaseUrl: 'http://localhost'
+  devBaseUrl: 'http://localhost'
 };
 
 gulp.task('connect', () => {
@@ -22,9 +23,10 @@ gulp.task('connect', () => {
 });
 
 gulp.task('open', ['connect'], () => {
-  gulp.src('dist/index.html')
-      .pipe(open('', {
-        url: `${config.devbaseUrl}:${config.port}/`
+  console.log(`${config.devBaseUrl}:${config.port}/`);
+  gulp.src('./dist/index.html')
+      .pipe(open({
+        uri: `${config.devBaseUrl}:${config.port}/`
       }))
 });
 
