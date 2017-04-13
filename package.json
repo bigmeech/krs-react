@@ -1,0 +1,25 @@
+{
+  "name": "krs-react-ui",
+  "version": "1.0.0",
+  "description": "React frontend for KRS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigmeech/krs-react-ui.git"
+  },
+  "author": "Larry Eliemenye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bigmeech/krs-react-ui/issues"
+  },
+  "homepage": "https://github.com/bigmeech/krs-react-ui#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-open": "^2.0.0",
+    "semistandard": "^10.0.0"
+  }
+}
