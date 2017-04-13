@@ -19,7 +19,7 @@ gulp.task('connect', () => {
     port: config.port,
     base: config.devBaseUrl,
     livereload: true
-  })
+  });
 });
 
 gulp.task('open', ['connect'], () => {
@@ -27,13 +27,17 @@ gulp.task('open', ['connect'], () => {
   gulp.src('./dist/index.html')
       .pipe(open({
         uri: `${config.devBaseUrl}:${config.port}/`
-      }))
+      }));
 });
 
 gulp.task('html', () => {
   gulp.src(config.paths.html)
       .pipe(gulp.dest(config.paths.dist))
-      .pipe(connect.reload())
+      .pipe(connect.reload());
 });
 
-gulp.task('default', ['html', 'open']);
+gulp.task('watch-files', () => {
+  gulp.watch(config.paths.html, ['html']);
+});
+
+gulp.task('default', ['html', 'open', 'watch-files']);
